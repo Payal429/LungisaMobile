@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NewsFragment">
+
+
+<!-- Logo at Top -->
+<ImageView
+    android:id="@+id/logoImage"
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    android:layout_margin="8dp"
+    android:contentDescription="App Logo"
+    android:scaleType="fitCenter"
+    android:src="@drawable/logolungisa" />
+
+<!-- Scrollable News Content -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Page heading -->
+        <TextView
+            android:id="@+id/news_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latest News and Updates"
+            android:textColor="#D32F2F"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- News item 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/news_title_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/news_body_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+        <!-- News item 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/news_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/news_body_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+        <!-- News item 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/news_title_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/news_body_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+        <!-- News item 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/news_title_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/news_body_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+        <!-- News item 5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/news_title_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/news_body_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+        <!-- News item 6 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/news_title_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/news_body_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+        <!-- Footer divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Footer content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Footer navigation links -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:text="LUNGIS"
+                    android:textColor="#D32F2F"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Home"
+                    android:textColor="#000000"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="About us"
+                    android:textColor="#000000"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Services"
+                    android:textColor="#000000"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Team"
+                    android:textColor="#000000"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Projects"
+                    android:textColor="#000000"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Contact"
+                    android:textColor="#000000"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Social media links -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:text="Facebook"
+                    android:textColor="#3b5998"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Instagram"
+                    android:textColor="#E1306C"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Twitter"
+                    android:textColor="#1DA1F2"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="LinkedIn"
+                    android:textColor="#0077B5"
+                    android:padding="4dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Subscription section -->
+            <TextView
+                android:text="Subscribe to get latest updates"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/subscription_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="your email"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/subscribe_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subscribe"
+                android:backgroundTint="#D32F2F"
+                android:textColor="#FFFFFF"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp" />
+
+            <TextView
+                android:text="© 2025 Lungis. All rights reserved."
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

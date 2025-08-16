@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DonationsFragment">
+<!-- Logo at Top -->
+<ImageView
+    android:id="@+id/logoImage"
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    android:layout_margin="8dp"
+    android:contentDescription="App Logo"
+    android:scaleType="fitCenter"
+    android:src="@drawable/logolungisa" />
+
+<!-- Scrollable content -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Page Title -->
+        <TextView
+            android:id="@+id/donate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lungisa Donation Page"
+            android:textSize="24sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Donation Amount Label -->
+        <TextView
+            android:id="@+id/donation_amount_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donation Amount"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Preset amounts -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            android:weightSum="3"
+            android:paddingHorizontal="16dp">
+
+            <Button
+                android:id="@+id/btn_r50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="R50"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#D32F2F"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_r100"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="R100"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#D32F2F"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_r200"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="R200"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#D32F2F" />
+        </LinearLayout>
+
+        <!-- Custom Amount -->
+        <EditText
+            android:id="@+id/custom_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Custom Amount"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Personal Details -->
+        <EditText
+            android:id="@+id/input_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/input_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Credit Card Information Label -->
+        <TextView
+            android:id="@+id/credit_card_info_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Card Information"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Payment Method Label -->
+        <TextView
+            android:id="@+id/payment_method_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Method"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Cards Image Placeholder -->
+        <TextView
+            android:id="@+id/cards_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[cards]"
+            android:textSize="18sp"
+            android:textColor="#777777"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Card Holder Name -->
+        <EditText
+            android:id="@+id/card_holder_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Card Holder Name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Credit Card Number -->
+        <EditText
+            android:id="@+id/credit_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Credit Card Number"
+            android:inputType="number"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <!-- CV and Expiry in horizontal row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="24dp">
+
+            <EditText
+                android:id="@+id/credit_card_cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="CV"
+                android:inputType="numberPassword"
+                android:padding="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/credit_card_expiry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="MM / YY"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@android:drawable/edit_text" />
+        </LinearLayout>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submit_donation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Bottom Logo -->
+        <TextView
+            android:id="@+id/logo_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lungisa Logo"
+            android:textSize="24sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Footer navigation -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:weightSum="7">
+
+            <TextView
+                android:text="LUNGIS"
+                android:textColor="#D32F2F"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Home"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="About us"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Services"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Team"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Projects"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Contact"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Social media -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:weightSum="4">
+
+            <TextView
+                android:text="Facebook"
+                android:textColor="#3b5998"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Instagram"
+                android:textColor="#E1306C"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Twitter"
+                android:textColor="#1DA1F2"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="LinkedIn"
+                android:textColor="#0077B5"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Subscription -->
+        <TextView
+            android:text="Subscribe to get latest updates"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent" />
+
+        <EditText
+            android:id="@+id/subscription_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your email"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/subscribe_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:text="© 2025 Lungis. All rights reserved."
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+</ScrollView>
+
+<!-- Custom Bottom Navigation Bar -->
+<LinearLayout
+    android:id="@+id/bottom_nav_bar"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@android:color/black"
+    android:orientation="horizontal"
+    android:weightSum="6">
+
+    <!-- Home Button -->
+    <ImageButton
+        android:id="@+id/nav_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_home"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_home" />
+
+    <!-- About Button -->
+    <ImageButton
+        android:id="@+id/nav_about"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_about"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_about" />
+
+    <!-- Services Button -->
+    <ImageButton
+        android:id="@+id/nav_services"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_services"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_services" />
+
+    <!-- News Button -->
+    <ImageButton
+        android:id="@+id/nav_news"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_news"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_news" />
+
+    <!-- Contact Button -->
+    <ImageButton
+        android:id="@+id/nav_contact"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_contact"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_contact" />
+
+    <!-- Donations Button -->
+    <ImageButton
+        android:id="@+id/nav_donations"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_donations"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_donations" />
+</LinearLayout>
+</LinearLayout>

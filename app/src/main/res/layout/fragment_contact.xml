@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ContactFragment">
+
+<!-- Logo at Top -->
+<ImageView
+    android:id="@+id/logoImage"
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    android:layout_margin="8dp"
+    android:contentDescription="App Logo"
+    android:scaleType="fitCenter"
+    android:src="@drawable/logo" />
+
+<!-- Scrollable content -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Intro Text -->
+        <TextView
+            android:id="@+id/how_can_we_help_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How Can We Help?"
+            android:textSize="20sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/how_can_we_help_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Whether you have a question, suggestion, or want to connect, the Lungisa team is here and ready to help. Reach out through the form below or via our contact details — we're always open to meaningful conversations. Let's work together to change our communities."
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/search_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search.."
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="24dp"
+            android:inputType="text" />
+
+        <!-- Let's talk title -->
+        <TextView
+            android:id="@+id/lets_talk_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's talk!"
+            android:textSize="20sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/lets_talk_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We'd love to hear from you! Whether you have a question, suggestion, or want to connect, the Lungisa team is here and ready to help."
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/contact_us_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Have any question in mind or want to enquire? Please feel free to contact us through the form or the following details."
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Contact Details -->
+        <TextView
+            android:id="@+id/contact_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Details"
+            android:textSize="18sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/contact_registered_office"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registered Office\n4850 ext2, KANANA, HAMMANSKRAAL 0407"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/contact_operations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Operations\n27269, Iqabothuleare Street, Soshanguve, 0152"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/contact_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone\n+27 82 303 9195"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/contact_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email\nlungisanpo@gmail.com"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Contact Form Title -->
+        <TextView
+            android:id="@+id/contact_form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:textSize="18sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Contact Form -->
+        <EditText
+            android:id="@+id/input_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/input_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/input_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/input_message"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="Type your Message"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/send_message_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send message"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp" />
+
+        <!-- FAQ, Requests, Community Sections -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="32dp">
+
+            <!-- FAQ -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#FFF0F0"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/faq_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="❓"
+                    android:textSize="32sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/faq_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FAQS"
+                    android:textColor="#D32F2F"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/faq_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Find quick answers to the most common questions about Lungisa and how it works."
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Requests -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#FFF0F0"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/requests_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📩"
+                    android:textSize="32sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/requests_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Requests"
+                    android:textColor="#D32F2F"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/requests_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Need support or want to report something? Submit a request and we'll get on it."
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Community -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#FFF0F0">
+
+                <TextView
+                    android:id="@+id/community_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🗣️"
+                    android:textSize="32sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/community_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ask the Community"
+                    android:textColor="#D32F2F"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/community_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start a discussion, share insights, or get advice from others who care—your voice matters."
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Bottom Logo -->
+        <TextView
+            android:id="@+id/logo_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lungisa Logo"
+            android:textSize="24sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Footer navigation -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:weightSum="7">
+
+            <TextView
+                android:text="LUNGIS"
+                android:textColor="#D32F2F"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Home"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="About us"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Services"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Team"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Projects"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Contact"
+                android:textColor="#000000"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Social media -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:weightSum="4">
+
+            <TextView
+                android:text="Facebook"
+                android:textColor="#3b5998"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Instagram"
+                android:textColor="#E1306C"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="Twitter"
+                android:textColor="#1DA1F2"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:text="LinkedIn"
+                android:textColor="#0077B5"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Subscription -->
+        <TextView
+            android:text="Subscribe to get latest updates"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent" />
+
+        <EditText
+            android:id="@+id/subscription_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your email"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/subscribe_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:text="© 2025 Lungis. All rights reserved."
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+</ScrollView>
+
+<!-- Custom Bottom Navigation Bar -->
+<LinearLayout
+    android:id="@+id/bottom_nav_bar"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@android:color/black"
+    android:orientation="horizontal"
+    android:weightSum="6">
+
+    <!-- Home Button -->
+    <ImageButton
+        android:id="@+id/nav_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_home"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_home" />
+
+    <!-- About Button -->
+    <ImageButton
+        android:id="@+id/nav_about"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_about"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_about" />
+
+    <!-- Services Button -->
+    <ImageButton
+        android:id="@+id/nav_services"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_services"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_services" />
+
+    <!-- News Button -->
+    <ImageButton
+        android:id="@+id/nav_news"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_news"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_news" />
+
+    <!-- Contact Button -->
+    <ImageButton
+        android:id="@+id/nav_contact"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_contact"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_contact" />
+
+    <!-- Donations Button -->
+    <ImageButton
+        android:id="@+id/nav_donations"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_donations"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_donations" />
+</LinearLayout>
+</LinearLayout>
