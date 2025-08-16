@@ -1,237 +1,517 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@color/white"
-tools:context=".AboutFragment">
-
-<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AboutFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <!-- Logo at Top Left -->
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_margin="8dp"
-        android:contentDescription="App Logo"
-        android:scaleType="fitCenter"
-        android:src="@drawable/logolungisa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp">
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="56dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoImage">
+        <!-- Logo at Top Left -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_margin="8dp"
+            android:contentDescription="App Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logolungisa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Donate Button on Right Side -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/donateButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_margin="8dp"
+            android:backgroundTint="#ED1F1F"
+            android:padding="10dp"
+            android:text="Donate"
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/logoImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/logoImage" />
 
-            <!-- KNOW ABOUT US -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
-                android:text="KNOW ABOUT US"
-                android:textColor="#D32F2F"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="56dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoImage">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
-                android:text="We are a non-profit organization (NPO) in South Africa with a Public Benefit Organization status and Section 18A tax-exempt status. Established in 1999, Lungisa is dedicated to addressing the healthcare and psychosocial needs of vulnerable communities, with a particular focus on children and youth. Guided by the Sustainable Development Goals, particularly Goal 3, Lungisa strives to ensure healthy lives and promote well-being for all ages."
-                android:textColor="#000000" />
-
-            <!-- OUR MISSION -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
-                android:text="OUR MISSION"
-                android:textColor="#D32F2F"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
-                android:text="To provide quality healthcare and psychosocial services, enhance knowledge and skills among vulnerable community members."
-                android:textColor="#000000" />
-
-            <!-- OUR VISION -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
-                android:text="OUR VISION"
-                android:textColor="#D32F2F"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
-                android:text="To cultivate a community characterized by:\n\n• High-quality physical well-being\n• Psychosocial awareness\n• Healthy cultural practices"
-                android:textColor="#000000" />
-
-            <!-- ORGANIZATIONAL VALUES -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
-                android:text="ORGANIZATIONAL VALUES"
-                android:textColor="#D32F2F"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
-                android:text="Accessibility: Ensuring that the community has access to the services provided by Lungisa and to available services.\n\nRespect: Treating all clients with respect and fostering inclusivity.\n\nConfidentiality: Maintaining strict confidentiality of all client information.\n\nIntegrity: Upholding the highest standards of honesty and safeguarding the reputation of the organization, its partners, sponsors, and supporters.\n\nQuality Service: Prioritizing client needs, providing courteous service, and delivering high-quality interventions."
-                android:textColor="#000000" />
-
-            <!-- INVESTMENT OPPORTUNITY -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
-                android:text="INVESTMENT OPPORTUNITY"
-                android:textColor="#D32F2F"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
-                android:text="Lungisa Entrepreneurial Development presents a compelling opportunity for funders seeking to make a tangible difference in the lives of vulnerable communities in South Africa. By investing in Lungisa, funders contribute to:\n\n• Improved health outcomes\n• Enhanced psychosocial well-being\n• Empowered youth\n• Strengthened community resilience\n\nYour support will enable Lungisa to expand its reach, enhance service delivery, and continue making a lasting impact on the communities it serves."
-                android:textColor="#000000" />
-
-            <!-- OUR TEAM -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
-                android:text="OUR TEAM"
-                android:textColor="#D32F2F"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- Team Member 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="12dp">
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle_shape"
-                    android:clipToOutline="true"
-                    android:layout_marginEnd="8dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/leah" />
-
-                <TextView
-                    android:layout_width="0dp"
+                <!-- KNOW ABOUT US Section -->
+                <FrameLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Dr Leah Shibambo\nFounder / CEO\nLeads strategy & partnerships. 25+ years in public health & youth development."
-                    android:textColor="#000000" />
-            </LinearLayout>
+                    android:layout_marginBottom="16dp">
 
-            <!-- Team Member 2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="12dp">
+                    <!-- Background Image with Opacity -->
+                    <ImageView
+                        android:id="@+id/bgKnowAboutUs"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/aboutus"
+                        android:alpha="0.3"/> <!-- Opacity -->
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle_shape"
-                    android:clipToOutline="true"
-                    android:layout_marginEnd="8dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/gary" />
+                    <!-- Texts on top of Image -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                <TextView
-                    android:layout_width="0dp"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="KNOW ABOUT US"
+                            android:textColor="@color/red"
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/know_about_us"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:paddingTop="8dp"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+
+                <!-- OUR MISSION (Black Box) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Gary Mokoena\nProgramme Manager\n10+ years in youth development & community health."
-                    android:textColor="#000000" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/black"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginBottom="8dp">
 
-            <!-- Team Member 3 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OUR MISSION"
+                        android:textColor="@color/red"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="4dp"/>
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle_shape"
-                    android:clipToOutline="true"
-                    android:layout_marginEnd="8dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/nomsa" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mission"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="0dp"
+
+                <!-- OUR VISION (Black Box) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Nomsa Dlamini\nProfessional Nurse\nLeads primary-health outreach & vaccination drives."
-                    android:textColor="#000000" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    app:cardCornerRadius="10dp"
+                    android:background="@color/black">
 
-            <!-- Team Member 4 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OUR VISION"
+                        android:textColor="@color/red"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="4dp"/>
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle_shape"
-                    android:clipToOutline="true"
-                    android:layout_marginEnd="8dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/thandiwe" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vision"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
 
+
+                <!-- ORGANIZATIONAL VALUES -->
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Thandiwe Nkosi\nSocial Worker\nSpecialises in trauma counselling & family therapy."
-                    android:textColor="#000000" />
-            </LinearLayout>
+                    android:paddingBottom="8dp"
+                    android:text="ORGANIZATIONAL VALUES"
+                    android:textColor="#D32F2F"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:paddingBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <!-- Accessibility Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="6dp"
+                            android:backgroundTint="@android:color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Accessibility"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:textColor="#D32F2F"
+                                    android:paddingBottom="4dp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ensuring that the community has access to the services provided by Lungisa and to available services."
+                                    android:textColor="#000000"
+                                    android:textSize="14sp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Respect Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp"
+                            android:backgroundTint="@android:color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Respect"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:textColor="#D32F2F"
+                                    android:paddingBottom="4dp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Treating all clients with respect and fostering inclusivity."
+                                    android:textColor="#000000"
+                                    android:textSize="14sp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Confidentiality Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp"
+                            android:backgroundTint="@android:color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Confidentiality"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:textColor="#D32F2F"
+                                    android:paddingBottom="4dp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Maintaining strict confidentiality of all client information."
+                                    android:textColor="#000000"
+                                    android:textSize="14sp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Integrity Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp"
+                            android:backgroundTint="@android:color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Integrity"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:textColor="#D32F2F"
+                                    android:paddingBottom="4dp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Upholding honesty and safeguarding the reputation of the organization, partners, sponsors, and supporters."
+                                    android:textColor="#000000"
+                                    android:textSize="14sp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Quality Service Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp"
+                            android:backgroundTint="@android:color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Quality Service"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    android:textColor="#D32F2F"
+                                    android:paddingBottom="4dp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Prioritizing client needs, providing courteous service, and delivering high-quality interventions."
+                                    android:textColor="#000000"
+                                    android:textSize="14sp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+                <!-- INVESTMENT OPPORTUNITY -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center_horizontal">
+
+                        <!-- Main Investment Opportunity Card -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:background="@android:color/white"
+                            android:elevation="6dp"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="INVESTMENT OPPORTUNITY"
+                                android:textColor="#D32F2F"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:paddingBottom="8dp"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lungisa Entrepreneurial Development presents a compelling opportunity for funders seeking to make a tangible difference in the lives of vulnerable communities in South Africa. By investing in Lungisa, funders contribute to:"
+                                android:textColor="#000000"
+                                android:textAlignment="center"
+                                android:paddingBottom="16dp"/>
+
+                            <!-- Bullet Points as Red Cards -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal"
+                                android:layout_marginBottom="8dp">
+
+                                <!-- Bullet 1 -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/rounded_button"
+                                    android:padding="12dp"
+                                    app:cornerRadius="10dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:elevation="4dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Improved health outcomes"
+                                        android:textColor="#FFFFFF"
+                                        android:textAlignment="center"/>
+                                </LinearLayout>
+
+                                <!-- Bullet 2 -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/rounded_button"
+                                    android:padding="12dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:elevation="4dp"
+                                    app:cornerRadius="10dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Enhanced psychosocial well-being"
+                                        android:textColor="#FFFFFF"
+                                        android:textAlignment="center"/>
+                                </LinearLayout>
+
+                                <!-- Bullet 3 -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/rounded_button"
+                                    android:padding="12dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:elevation="4dp"
+                                    app:cornerRadius="10dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Empowered youth"
+                                        android:textColor="#FFFFFF"
+                                        android:textAlignment="center"/>
+                                </LinearLayout>
+
+                                <!-- Bullet 4 -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/rounded_button"
+                                    android:padding="12dp"
+                                    android:elevation="4dp"
+                                    app:cornerRadius="10dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Strengthened community resilience"
+                                        android:textColor="#FFFFFF"
+                                        android:textAlignment="center"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Closing Statement -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Your support will enable Lungisa to expand its reach, enhance service delivery, and continue making a lasting impact on the communities it serves."
+                                android:textColor="#000000"
+                                android:textAlignment="center"
+                                android:paddingTop="16dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <!-- OUR TEAM -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:text="OUR TEAM"
+                        android:textColor="#ED1F1F"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/teamRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

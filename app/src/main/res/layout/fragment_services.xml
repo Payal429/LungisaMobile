@@ -1,478 +1,486 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    orientation="vertical"
     tools:context=".ServicesFragment">
 
-<androidx.drawerlayout.widget.DrawerLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:id="@+id/drawer_layout"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<!-- Main content -->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <!-- Logo at Top Left -->
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_margin="8dp"
-        android:contentDescription="App Logo"
-        android:scaleType="fitCenter"
-        android:src="@drawable/logolungisa" />
-
-
-
-    <!-- Scrollable content -->
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:paddingBottom="5dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Logo at Top Left -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_margin="8dp"
+            android:contentDescription="App Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logolungisa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Donate Button on Right Side -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/donateButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="8dp"
+            android:backgroundTint="#ED1F1F"
+            android:padding="10dp"
+            android:text="Donate"
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/logoImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/logoImage" />
 
-            <!-- Page Title -->
-            <TextView
-                android:id="@+id/page_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ENTREPRENEURIAL DEVELOPMENT"
-                android:textColor="#D32F2F"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
 
-            <!-- Button -->
-            <Button
-                android:id="@+id/key_service_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Key Service Areas"
-                android:textAllCaps="false"
-                android:backgroundTint="#D32F2F"
-                android:textColor="#FFFFFF"
-                android:paddingHorizontal="24dp"
-                android:paddingVertical="12dp"
-                android:layout_marginBottom="24dp" />
 
-            <!-- Primary Healthcare -->
-            <TextView
-                android:id="@+id/title_primary_healthcare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Primary Healthcare"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginBottom="8dp" />
+            <!-- Scrollable content -->
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="56dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logoImage">
 
-            <TextView
-                android:id="@+id/desc_primary_healthcare"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lungisa offers primary healthcare services delivered by professional nurses. These services include:\n\n&#8226; Management of minor ailments\n&#8226; Baby vaccinations\n&#8226; Management of chronic conditions\n&#8226; Family planning\n&#8226; HIV prevention, awareness, counselling, and testing facilitated by peer educators and HIV counsellors"
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:lineSpacingExtra="4dp"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Psychosocial Support -->
-            <TextView
-                android:id="@+id/title_psychosocial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Psychosocial Support"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/desc_psychosocial"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lungisa's qualified social workers provide vital psychosocial therapy to: Individuals &#8226; Families &#8226; Couples &#8226; Groups. This comprehensive approach addresses a wide range of social problems, and the organization provides referrals when specialized care is necessary."
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:lineSpacingExtra="4dp"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Youth Development -->
-            <TextView
-                android:id="@+id/title_youth_dev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Youth Development"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/desc_youth_dev"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lungisa's youth program empowers young people through:\n\n&#8226; Life skills training\n&#8226; Extra-mural activities including dance and cultural workshops\n&#8226; Dialogues on relevant and challenging topics\n&#8226; Homework assistance\n\nThese programs offer opportunities to learn new skills, engage in cultural activities, improve academic performance, and develop healthy coping mechanisms."
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:lineSpacingExtra="4dp"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Community Partnerships -->
-            <TextView
-                android:id="@+id/title_community_partnerships"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Community Partnerships"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/desc_community_partnerships"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lungisa recognizes the importance of collaboration and actively seeks partnerships with: Community structures &#8226; Other non-governmental organizations (NGOs). This collaborative approach maximizes impact and fosters sustainable community development."
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:lineSpacingExtra="4dp"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Mission smile1k -->
-            <TextView
-                android:id="@+id/title_mission_activities"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mission smile1k:"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#D32F2F"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="12dp" />
-
-            <!-- Weekly excursions -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp">
-
-                <TextView
-                    android:id="@+id/weekly_excursions"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Weekly excursions"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/weekly_learn_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Learn more"
-                    android:textColor="#D32F2F"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
-
-            <!-- Monthly public outdoor charity awareness -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp">
-
-                <TextView
-                    android:id="@+id/monthly_charity"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Monthly public\nOutdoor charity awareness"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/monthly_learn_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Learn more"
-                    android:textColor="#D32F2F"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
-
-            <!-- Dolor -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp">
-
-                <TextView
-                    android:id="@+id/dolor"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="dolor"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/dolor_learn_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Learn more"
-                    android:textColor="#D32F2F"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
-
-            <!-- Footer -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#CCCCCC"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="16dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-
-                <!-- Navigation links repeated for footer -->
+                <!-- Main content -->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_marginBottom="12dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:text="LUNGISA"
-                        android:textColor="#D32F2F"
-                        android:textStyle="bold"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp">
 
-                    <TextView
-                        android:text="Home"
-                        android:textColor="#000000"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
+                        <!-- Background Image with Opacity -->
+                        <ImageView
+                            android:id="@+id/bgKnowAboutUs"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/services2"
+                            android:alpha="0.3"/> <!-- Opacity -->
 
-                    <TextView
-                        android:text="About us"
-                        android:textColor="#000000"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
+                        <!-- Texts on top of Image -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                    <TextView
-                        android:text="Services"
-                        android:textColor="#000000"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SERVICES"
+                                android:textColor="@color/red"
+                                android:textSize="20sp"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:text="@string/servicestext"
+                                android:gravity="center"
+                                android:paddingTop="8dp"/>
 
-                    <TextView
-                        android:text="Team"
-                        android:textColor="#000000"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/key_service_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:backgroundTint="@color/black"
+                                android:paddingHorizontal="24dp"
+                                android:paddingVertical="12dp"
+                                android:text="LEARN MORE"
+                                app:cornerRadius="10dp"
+                                android:textAllCaps="false"
+                                android:textColor="#FFFFFF" />
+                        </LinearLayout>
+                    </FrameLayout>
 
-                    <TextView
-                        android:text="Projects"
-                        android:textColor="#000000"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
 
-                    <TextView
-                        android:text="Contact"
-                        android:textColor="#000000"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                    <!-- Primary Healthcare Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardElevation="6dp"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="12dp"
+                        android:padding="16dp">
 
-                <!-- Social media -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_marginEnd="12dp"
+                                android:src="@drawable/primarycare"
+                                android:scaleType="centerCrop"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Primary Healthcare"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:paddingBottom="4dp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="• Management of minor ailments
+• Baby vaccinations
+• Management of chronic conditions
+• Family planning
+• HIV prevention, awareness, counselling, and testing facilitated by peer educators and HIV counsellors"
+                                    android:textSize="14sp"
+                                    android:textColor="#333333"
+                                    android:lineSpacingExtra="4dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Psychosocial Support Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardElevation="6dp"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="12dp"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_marginEnd="12dp"
+                                android:src="@drawable/empathy"
+                                android:scaleType="centerCrop"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Psychosocial Support"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:paddingBottom="4dp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="• Individuals
+• Families
+• Couples
+• Groups
+This comprehensive approach addresses a wide range of social problems, and the organization provides referrals when specialized care is necessary."
+                                    android:textSize="14sp"
+                                    android:textColor="#333333"
+                                    android:lineSpacingExtra="4dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Youth Development Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardElevation="6dp"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="12dp"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_marginEnd="12dp"
+                                android:src="@drawable/youthday"
+                                android:scaleType="centerCrop"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Youth Development"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:paddingBottom="4dp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="• Life skills training
+• Extra-mural activities including dance and cultural workshops
+• Dialogues on relevant and challenging topics
+• Homework assistance
+These programs offer opportunities to learn new skills, engage in cultural activities, improve academic performance, and develop healthy coping mechanisms."
+                                    android:textSize="14sp"
+                                    android:textColor="#333333"
+                                    android:lineSpacingExtra="4dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Community Partnerships Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardElevation="6dp"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="12dp"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_marginEnd="12dp"
+                                android:src="@drawable/community"
+                                android:scaleType="centerCrop"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Community Partnerships"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:paddingBottom="4dp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="• Community structures • Other non-governmental organizations (NGOs)
+                                    This collaborative approach maximizes impact and fosters sustainable community development."
+                                    android:textSize="14sp"
+                                    android:textColor="#333333"
+                                    android:lineSpacingExtra="4dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+                <!-- Footer -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#CCCCCC" />
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_marginBottom="12dp">
-
-                    <TextView
-                        android:text="Facebook"
-                        android:textColor="#3b5998"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:text="Instagram"
-                        android:textColor="#E1306C"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:text="Twitter"
-                        android:textColor="#1DA1F2"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:text="LinkedIn"
-                        android:textColor="#0077B5"
-                        android:padding="4dp"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <!-- Subscription -->
-                <TextView
-                    android:text="Subscribe to get latest updates"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="8dp" />
-
-                <EditText
-                    android:id="@+id/subscription_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="your email"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginBottom="8dp" />
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/subscribe_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Subscribe"
-                    android:backgroundTint="#D32F2F"
-                    android:textColor="#FFFFFF"
-                    android:paddingHorizontal="24dp"
-                    android:paddingVertical="12dp" />
+                    <!-- Navigation links repeated for footer -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:text="© 2025 Lungis. All rights reserved."
-                    android:textColor="#888888"
-                    android:textSize="12sp"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+                        <TextView
+                            android:padding="4dp"
+                            android:text="LUNGISA"
+                            android:textColor="#D32F2F"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
 
-    <!-- Custom Bottom Navigation Bar -->
-    <LinearLayout
-        android:id="@+id/bottom_nav_bar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@android:color/black"
-        android:orientation="horizontal"
-        android:weightSum="6">
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Home"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
 
-        <!-- Home Button -->
-        <ImageButton
-            android:id="@+id/nav_home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/nav_home"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_home" />
+                        <TextView
+                            android:padding="4dp"
+                            android:text="About us"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
 
-        <!-- About Button -->
-        <ImageButton
-            android:id="@+id/nav_about"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/nav_about"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_about" />
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Services"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
 
-        <!-- Services Button -->
-        <ImageButton
-            android:id="@+id/nav_services"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/nav_services"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_services" />
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Team"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
 
-        <!-- News Button -->
-        <ImageButton
-            android:id="@+id/nav_news"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/nav_news"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_news" />
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Projects"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
 
-        <!-- Contact Button -->
-        <ImageButton
-            android:id="@+id/nav_contact"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/nav_contact"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_contact" />
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Contact"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
+                    </LinearLayout>
 
-        <!-- Donations Button -->
-        <ImageButton
-            android:id="@+id/nav_donations"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/nav_donations"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_donations" />
-    </LinearLayout>
-</LinearLayout>
+                    <!-- Social media -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-<!-- Navigation drawer -->
-<com.google.android.material.navigation.NavigationView
-    android:id="@+id/nav_view"
-    android:layout_width="280dp"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    android:background="#FFFFFF"
-    app:headerLayout="@layout/nav_header"
-    app:menu="@menu/drawer_menu" />
-</androidx.drawerlayout.widget.DrawerLayout>
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Facebook"
+                            android:textColor="#3b5998"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
+
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Instagram"
+                            android:textColor="#E1306C"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
+
+                        <TextView
+                            android:padding="4dp"
+                            android:text="Twitter"
+                            android:textColor="#1DA1F2"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
+
+                        <TextView
+                            android:padding="4dp"
+                            android:text="LinkedIn"
+                            android:textColor="#0077B5"
+                            android:textSize="14sp"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"/>
+                    </LinearLayout>
+
+                    <!-- Subscription -->
+                    <TextView
+                        android:layout_marginBottom="8dp"
+                        android:text="Subscribe to get latest updates"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"/>
+
+                    <EditText
+                        android:id="@+id/subscription_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:drawable/edit_text"
+                        android:hint="your email"
+                        android:inputType="textEmailAddress"
+                        android:padding="8dp" />
+
+                    <Button
+                        android:id="@+id/subscribe_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#D32F2F"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="12dp"
+                        android:text="Subscribe"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="© 2025 Lungis. All rights reserved."
+                        android:textColor="#888888"
+                        android:textSize="12sp"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

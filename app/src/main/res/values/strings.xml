@@ -4,4 +4,8 @@
     <string name="navigation_drawer_close" />
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="know_about_us">We are a non-profit organization (NPO) in South Africa with a Public Benefit Organization status and Section 18A tax-exempt status. Established in 1999, Lungisa is dedicated to addressing the healthcare and psychosocial needs of vulnerable communities, with a particular focus on children and youth. Guided by the Sustainable Development Goals, particularly Goal 3, Lungisa strives to ensure healthy lives and promote well-being for all ages.</string>
+    <string name="mission">To provide quality healthcare and psychosocial services, enhance knowledge and skills among vulnerable community members.</string>
+    <string name="vision">To cultivate a community characterized by:\n\n• High-quality physical well-being\n• Psychosocial awareness\n• Healthy cultural practices</string>
+    <string name="servicestext">Empowering communities through culture, education and opportunity. Join us as we create a lasting change, one initiative at a time. Together, we strive to uplift lives and preserve heritage through innovative, community-driven solutions.</string>
 </resources>
