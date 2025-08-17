@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,203 +8,84 @@
     tools:context=".NewsFragment">
 
 
-<!-- Logo at Top -->
-<ImageView
-    android:id="@+id/logoImage"
-    android:layout_width="100dp"
-    android:layout_height="70dp"
-    android:layout_margin="8dp"
-    android:contentDescription="App Logo"
-    android:scaleType="fitCenter"
-    android:src="@drawable/logolungisa" />
-
-<!-- Scrollable News Content -->
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:padding="16dp">
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp">
 
-        <!-- Page heading -->
-        <TextView
-            android:id="@+id/news_heading"
+        <!-- Logo at Top Left -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_margin="8dp"
+            android:contentDescription="App Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logolungisa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Donate Button on Right Side -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/donateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Latest News and Updates"
-            android:textColor="#D32F2F"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+            android:layout_margin="8dp"
+            android:backgroundTint="#ED1F1F"
+            android:padding="10dp"
+            android:text="Donate"
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/logoImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/logoImage" />
 
-        <!-- News item 1 -->
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
+            android:layout_height="match_parent"/>
+        <!-- Scrollable News Content -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="56dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoImage">
 
-            <TextView
-                android:id="@+id/news_title_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/news_body_1"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
-                android:textColor="#333333"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <!-- News item 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
+                <!-- Page Heading -->
+                <TextView
+                    android:id="@+id/news_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Latest News and Updates"
+                    android:textColor="@color/red"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/news_title_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/news_body_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
-                android:textColor="#333333"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp" />
-        </LinearLayout>
-
-        <!-- News item 3 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
-
-            <TextView
-                android:id="@+id/news_title_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/news_body_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
-                android:textColor="#333333"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp" />
-        </LinearLayout>
-
-        <!-- News item 4 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
-
-            <TextView
-                android:id="@+id/news_title_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/news_body_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
-                android:textColor="#333333"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp" />
-        </LinearLayout>
-
-        <!-- News item 5 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
-
-            <TextView
-                android:id="@+id/news_title_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/news_body_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
-                android:textColor="#333333"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp" />
-        </LinearLayout>
-
-        <!-- News item 6 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
-
-            <TextView
-                android:id="@+id/news_title_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/news_body_6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very short story."
-                android:textColor="#333333"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp" />
-        </LinearLayout>
+                <!-- RecyclerView for news -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/newsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="16dp"
+                    android:nestedScrollingEnabled="true"
+                    android:scrollbars="vertical"/>
 
 
-    </LinearLayout>
-</ScrollView>
-
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

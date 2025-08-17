@@ -1,334 +1,395 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".DonationsFragment">
-<!-- Logo at Top -->
-<ImageView
-    android:id="@+id/logoImage"
-    android:layout_width="100dp"
-    android:layout_height="70dp"
-    android:layout_margin="8dp"
-    android:contentDescription="App Logo"
-    android:scaleType="fitCenter"
-    android:src="@drawable/logolungisa" />
 
-<!-- Scrollable content -->
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:padding="16dp">
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp">
 
-        <!-- Page Title -->
-        <TextView
-            android:id="@+id/donate_title"
+        <!-- Logo at Top Left -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_margin="8dp"
+            android:contentDescription="App Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logolungisa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Donate Button on Right Side -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/donateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lungisa Donation Page"
-            android:textSize="24sp"
-            android:textColor="#D32F2F"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp" />
+            android:layout_margin="8dp"
+            android:backgroundTint="#ED1F1F"
+            android:padding="10dp"
+            android:text="Donate"
+            android:textColor="@android:color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/logoImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/logoImage" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp"
-            android:background="#000000"
-            android:padding="16dp">
 
+        <!-- Scrollable content -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="56dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoImage">
+
+            <!-- Main content -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!-- Donation Amount Label -->
+                <!-- Page Title -->
                 <TextView
-                    android:id="@+id/donation_amount_label"
+                    android:id="@+id/donate_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Donation Amount"
-                    android:textSize="18sp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
-
-                <!-- Preset amounts -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_marginBottom="16dp"
-                    android:weightSum="4"
-                    android:paddingHorizontal="8dp">
-
-                    <Button
-                        android:id="@+id/btn_r50"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/rounded_button"
-                        android:backgroundTint="#ed1f1f"
-                        android:backgroundTintMode="add"
-                        android:clipToOutline="true"
-                        android:text="R50"
-                        android:textColor="#FFFFFF" />
-
-                    <Button
-                        android:id="@+id/btn_r100"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/rounded_button"
-                        android:backgroundTint="#ed1f1f"
-                        android:clipToOutline="true"
-                        android:text="R100"
-                        android:textColor="#FFFFFF" />
-
-                    <Button
-                        android:id="@+id/btn_r200"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="R200"
-                        android:textColor="#FFFFFF"
-                        android:backgroundTint="#D32F2F"
-                        android:layout_marginEnd="8dp"
-                        android:clipToOutline="true"
-                        android:background="@drawable/rounded_button" />
-
-                    <Button
-                        android:id="@+id/btn_r500"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="R500"
-                        android:textColor="#FFFFFF"
-                        android:backgroundTint="#D32F2F"
-                        android:clipToOutline="true"
-                        android:background="@drawable/rounded_button" />
-                </LinearLayout>
-
-                <!-- Custom Amount -->
-                <EditText
-                    android:id="@+id/custom_amount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Custom Amount"
-                    android:inputType="numberDecimal"
-                    android:padding="12dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#CCCCCC"
-                    android:layout_marginBottom="24dp" />
-
-                <!-- Personal Information Label -->
-                <TextView
-                    android:id="@+id/personal_information_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Personal Information"
-                    android:textSize="18sp"
-                    android:textColor="@color/red"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
-
-                <EditText
-                    android:id="@+id/input_first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="First Name"
-                    android:inputType="textPersonName"
-                    android:padding="12dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#CCCCCC"
-                    android:layout_marginBottom="12dp" />
-
-                <EditText
-                    android:id="@+id/input_last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Last Name"
-                    android:inputType="textPersonName"
-                    android:padding="12dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#CCCCCC"
-                    android:layout_marginBottom="12dp" />
-
-                <EditText
-                    android:id="@+id/input_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Phone Number"
-                    android:inputType="phone"
-                    android:padding="12dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#CCCCCC"
-                    android:layout_marginBottom="12dp" />
-
-                <EditText
-                    android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email Address"
-                    android:inputType="textEmailAddress"
-                    android:padding="12dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#CCCCCC"
-                    android:layout_marginBottom="12dp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp"
-            android:backgroundTint="@color/black"
-            android:padding="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <!-- Credit Card Information Label -->
-                <TextView
-                    android:id="@+id/credit_card_info_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Credit Card Information"
-                    android:textSize="18sp"
-                    android:textColor="@color/red"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
-
-                <!-- Cards Image -->
-                <ImageView
-                    android:id="@+id/cards_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:src="@drawable/creditcards"
-                    android:contentDescription="Supported cards"
-                    android:layout_marginBottom="16dp" />
-                <!-- Payment Method Label -->
-                <TextView
-                    android:id="@+id/payment_method_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="Payment Method"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-                <Spinner
-                    android:id="@+id/paymentMethodSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@android:drawable/btn_dropdown"
-                    android:spinnerMode="dropdown"/>
-
-                <!-- Card Holder Name -->
-                <EditText
-                    android:id="@+id/card_holder_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Card Holder Name"
-                    android:inputType="textPersonName"
-                    android:padding="12dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#CCCCCC"
-                    android:layout_marginBottom="12dp" />
-
-                <!-- Credit Card Number -->
-                <EditText
-                    android:id="@+id/credit_card_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Credit Card Number"
-                    android:inputType="number"
-                    android:padding="12dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#CCCCCC"
-                    android:layout_marginBottom="12dp" />
-
-                <!-- CV and Expiry in horizontal row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:layout_marginBottom="24dp">
-
-                    <EditText
-                        android:id="@+id/credit_card_cv"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="CV"
-                        android:inputType="numberPassword"
-                        android:padding="12dp"
-                        android:backgroundTint="#FFFFFF"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#CCCCCC"
-                        android:layout_marginEnd="8dp" />
-
-                    <EditText
-                        android:id="@+id/credit_card_expiry"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="MM / YY"
-                        android:inputType="text"
-                        android:padding="12dp"
-                        android:backgroundTint="#FFFFFF"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#CCCCCC" />
-                </LinearLayout>
-
-                <!-- Submit Button with 10dp radius -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/submit_donation_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Submit"
-                    android:textColor="#FFFFFF"
-                    android:backgroundTint="#ED1F1F"
-                    app:cornerRadius="10dp"
-                    android:paddingHorizontal="24dp"
-                    android:paddingVertical="12dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Lungisa Donation Page"
+                    android:textColor="#D32F2F"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/black"
+                    android:padding="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <!-- Donation Amount Label -->
+                        <TextView
+                            android:id="@+id/donation_amount_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:text="Donation Amount"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <!-- Preset amounts -->
+                        <!-- Preset amounts with 2 buttons per row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="8dp">
+
+                            <!-- First row: R50 and R100 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <Button
+                                    android:id="@+id/btn_r50"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/red"
+                                    android:text="R50"
+                                    android:textColor="#FFFFFF"
+                                    app:cornerRadius="10dp" />
+
+                                <Button
+                                    android:id="@+id/btn_r100"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/red"
+                                    android:text="R100"
+                                    android:textColor="#FFFFFF"
+                                    app:cornerRadius="10dp" />
+                            </LinearLayout>
+
+                            <!-- Second row: R200 and R500 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <Button
+                                    android:id="@+id/btn_r200"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/red"
+                                    android:text="R200"
+                                    android:textColor="#FFFFFF"
+                                    app:cornerRadius="10dp" />
+
+                                <Button
+                                    android:id="@+id/btn_r500"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/red"
+                                    android:text="R500"
+                                    android:textColor="#FFFFFF"
+                                    app:cornerRadius="10dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <!-- Custom Amount -->
+                        <EditText
+                            android:id="@+id/custom_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:background="@color/white"
+                            android:hint="Custom Amount"
+                            android:inputType="numberDecimal"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CCCCCC"
+                            app:cornerRadius="10dp" />
+
+                        <!-- Personal Information Label -->
+                        <TextView
+                            android:id="@+id/personal_information_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:text="Personal Information"
+                            android:textColor="@color/red"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/input_first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:background="@color/white"
+                            android:hint="First Name"
+                            android:inputType="textPersonName"
+                            android:padding="5dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CCCCCC"
+                            app:cornerRadius="10dp" />
+
+                        <EditText
+                            android:id="@+id/input_last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:background="@color/white"
+                            android:hint="Last Name"
+                            android:inputType="textPersonName"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CCCCCC"
+                            app:cornerRadius="10dp" />
+
+                        <EditText
+                            android:id="@+id/input_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:background="@color/white"
+                            android:hint="Phone Number"
+                            android:inputType="phone"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CCCCCC"
+                            app:cornerRadius="10dp" />
+
+                        <EditText
+                            android:id="@+id/input_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:background="@color/white"
+                            android:hint="Email Address"
+                            android:inputType="textEmailAddress"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CCCCCC"
+                            app:cornerRadius="10dp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/black"
+                    android:padding="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <!-- Credit Card Information Label -->
+                        <TextView
+                            android:id="@+id/credit_card_info_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:text="Credit Card Information"
+                            android:textColor="@color/red"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <!-- Cards Image -->
+                        <ImageView
+                            android:id="@+id/cards_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="Supported cards"
+                            android:src="@drawable/creditcards" />
+
+                        <!-- Payment Method Label -->
+                        <TextView
+                            android:id="@+id/payment_method_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:text="Payment Method"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/paymentMethodSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="12dp"
+                            android:background="@color/white"
+                            android:padding="15dp"
+                            android:spinnerMode="dropdown"
+                            android:textColor="@color/black"
+                            app:cornerRadius="10dp" />
+
+                        <!-- Card Holder Name -->
+                        <EditText
+                            android:id="@+id/card_holder_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:background="@color/white"
+                            android:hint="Card Holder Name"
+                            android:inputType="textPersonName"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CCCCCC"
+                            app:cornerRadius="10dp" />
+
+                        <!-- Credit Card Number -->
+                        <EditText
+                            android:id="@+id/credit_card_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:background="@color/white"
+                            android:hint="Credit Card Number"
+                            android:inputType="number"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#CCCCCC"
+                            app:cornerRadius="10dp" />
+
+                        <!-- CV and Expiry in horizontal row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <EditText
+                                android:id="@+id/credit_card_cv"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:hint="CV"
+                                android:inputType="numberPassword"
+                                android:padding="12dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#CCCCCC"
+                                app:cornerRadius="10dp" />
+
+                            <EditText
+                                android:id="@+id/credit_card_expiry"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:hint="MM / YY"
+                                android:inputType="text"
+                                android:padding="12dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#CCCCCC"
+                                app:cornerRadius="10dp" />
+                        </LinearLayout>
+
+                        <!-- Submit Button with 10dp radius -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/submit_donation_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="#ED1F1F"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="12dp"
+                            android:text="Submit"
+                            android:textColor="#FFFFFF"
+                            app:cornerRadius="10dp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
-</ScrollView>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

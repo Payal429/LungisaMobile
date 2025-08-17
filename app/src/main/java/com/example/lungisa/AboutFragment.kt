@@ -8,32 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class AboutFragment : Fragment() {
+class AboutFragment : Fragment(R.layout.fragment_about) {
 
-    class AboutFragment : Fragment(R.layout.fragment_about) {
-
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
-
-            // Find RecyclerView
-            val teamRecyclerView = view.findViewById<RecyclerView>(R.id.teamRecyclerView)
-
-            // Set layout manager
-            teamRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-            // List of team members
-            val teamMembers = listOf(
-                TeamMember(R.drawable.drleahshibambo, "Dr Leah Shibambo", "Executive Director"),
-                TeamMember(R.drawable.louisa, "Louisa Mokoena", "Linkage Officer/ Office Manager"),
-                TeamMember(R.drawable.srjuliemakgalo, "Sr Julie Makgalo", "Professional Nurse"),
-                TeamMember(R.drawable.marthamnisi, "Martha Mnisi", "Finance Officer")
-            )
-
-            // Set adapter
-            val adapter = TeamAdapter(teamMembers)
-            teamRecyclerView.adapter = adapter
-        }
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,4 +18,22 @@ class AboutFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Find the RecyclerView
+        val teamRecyclerView = view.findViewById<RecyclerView>(R.id.teamRecyclerView)
+
+        // Set layout manager
+        teamRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Get the list of team members from TeamData
+        val teamMembers = TeamData.teamMembers
+
+        // Set adapter
+        val adapter = TeamAdapter(teamMembers)
+        teamRecyclerView.adapter = adapter
+    }
 }
+
+

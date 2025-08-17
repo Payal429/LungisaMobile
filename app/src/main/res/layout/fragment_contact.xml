@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:backgroundTint="#ED1F1F"
+            android:backgroundTint="@color/red"
             android:padding="10dp"
             android:text="Donate"
             android:textColor="@android:color/white"
@@ -55,8 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#ffffff"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="vertical">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -67,10 +66,10 @@
                     <ImageView
                         android:id="@+id/bgKnowAboutUs"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="400dp"
+                        android:alpha="0.3"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/contactus"
-                        android:alpha="0.3"/>
+                        android:src="@drawable/contactus" />
 
                     <!-- Texts on top of Image -->
                     <LinearLayout
@@ -86,15 +85,15 @@
                             android:text="HOW CAN WE HELP"
                             android:textColor="@android:color/black"
                             android:textSize="20sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/how_can_we_help_body"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="24dp"
-                            android:lineSpacingExtra="4dp"
                             android:gravity="center"
+                            android:lineSpacingExtra="4dp"
                             android:text="Whether you have a question, suggestion, or want to connect, the Lungisa team is here and ready to help. Reach out through the form below or via our contact details — we're always open to meaningful conversations. Let's work together to change our communities."
                             android:textColor="@color/black"
                             android:textSize="14sp" />
@@ -111,201 +110,224 @@
                     </LinearLayout>
                 </FrameLayout>
 
-                <!-- Let's Talk Card -->
-                <androidx.cardview.widget.CardView
+                <!-- Contact Section with Red Background -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
+                    android:background="@color/red"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <LinearLayout
+                    <!-- Let's Talk Card -->
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:layout_marginBottom="16dp"
+                        android:padding="16dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
 
-                        <TextView
-                            android:id="@+id/lets_talk_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="Let's talk!"
-                            android:textColor="#D32F2F"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/lets_talk_body"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:lineSpacingExtra="4dp"
-                            android:text="We'd love to hear from you! Whether you have a question, suggestion, or want to connect, the Lungisa team is here and ready to help."
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
+                            android:orientation="vertical"
+                            android:padding="10dp">
 
-                        <TextView
-                            android:id="@+id/contact_us_intro"
+                            <TextView
+                                android:id="@+id/lets_talk_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:text="Let's talk!"
+                                android:textColor="#D32F2F"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/lets_talk_body"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:lineSpacingExtra="4dp"
+                                android:text="@string/contact_us_info"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/contact_us_intro"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:lineSpacingExtra="4dp"
+                                android:text="@string/contact_us_info2"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Contact Details Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:padding="16dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="0dp"
-                            android:lineSpacingExtra="4dp"
-                            android:text="Have any question in mind or want to enquire? Please feel free to contact us through the form or the following details."
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
+                            android:orientation="vertical"
+                            android:padding="10dp">
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/contact_details_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:text="Contact Details"
+                                android:textColor="#D32F2F"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
-                <!-- Contact Details Card -->
-                <androidx.cardview.widget.CardView
+                            <TextView
+                                android:id="@+id/contact_registered_office"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:lineSpacingExtra="4dp"
+                                android:text="Registered Office\n4850 ext2, KANANA, HAMMANSKRAAL 0407"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/contact_operations"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:lineSpacingExtra="4dp"
+                                android:text="Operations\n27269, Iqabothuleare Street, Soshanguve, 0152"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/contact_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:lineSpacingExtra="4dp"
+                                android:text="Phone\n+27 68 251 6154"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/contact_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lineSpacingExtra="4dp"
+                                android:text="Email\nlungisanpc@gmail.com"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <!-- Contact Form Section with White Background -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
                     android:padding="16dp">
 
-                    <LinearLayout
+                    <!-- Contact Form Title -->
+                    <TextView
+                        android:id="@+id/contact_form_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="Contact Us"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Contact Form -->
+                    <EditText
+                        android:id="@+id/input_first_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:layout_marginBottom="12dp"
+                        android:background="#F5F5F5"
+                        android:hint="First Name"
+                        android:inputType="textPersonName"
+                        android:padding="12dp"
+                        app:cardCornerRadius="10dp" />
 
-                        <TextView
-                            android:id="@+id/contact_details_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="Contact Details"
-                            android:textColor="#D32F2F"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/input_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="#F5F5F5"
+                        android:hint="Last Name"
+                        android:inputType="textPersonName"
+                        android:padding="12dp"
+                        app:cardCornerRadius="10dp" />
 
-                        <TextView
-                            android:id="@+id/contact_registered_office"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:lineSpacingExtra="4dp"
-                            android:text="Registered Office\n4850 ext2, KANANA, HAMMANSKRAAL 0407"
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
+                    <EditText
+                        android:id="@+id/input_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="#F5F5F5"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:padding="12dp"
+                        app:cardCornerRadius="10dp" />
 
-                        <TextView
-                            android:id="@+id/contact_operations"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:lineSpacingExtra="4dp"
-                            android:text="Operations\n27269, Iqabothuleare Street, Soshanguve, 0152"
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
+                    <EditText
+                        android:id="@+id/input_subject"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="#F5F5F5"
+                        android:hint="Subject"
+                        android:inputType="text"
+                        android:padding="12dp"
+                        app:cardCornerRadius="10dp" />
 
-                        <TextView
-                            android:id="@+id/contact_phone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:lineSpacingExtra="4dp"
-                            android:text="Phone\n+27 82 303 9195"
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
+                    <EditText
+                        android:id="@+id/input_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="#F5F5F5"
+                        android:gravity="top|start"
+                        android:hint="Type your Message"
+                        android:inputType="textMultiLine"
+                        android:padding="12dp"
+                        app:cardCornerRadius="10dp" />
 
-                        <TextView
-                            android:id="@+id/contact_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:lineSpacingExtra="4dp"
-                            android:text="Email\nlungisanpo@gmail.com"
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/send_message_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="32dp"
+                        android:backgroundTint="@color/red"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="12dp"
+                        android:text="Send message"
+                        android:textColor="@color/white"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
-                <!-- Contact Form Title -->
-                <TextView
-                    android:id="@+id/contact_form_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Contact Us"
-                    android:textColor="#D32F2F"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <!-- Contact Form -->
-                <EditText
-                    android:id="@+id/input_first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:hint="First Name"
-                    app:cardCornerRadius="10dp"
-                    android:inputType="textPersonName"
-                    android:padding="12dp" />
-
-                <EditText
-                    android:id="@+id/input_last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:hint="Last Name"
-                    app:cardCornerRadius="10dp"
-                    android:inputType="textPersonName"
-                    android:padding="12dp" />
-
-                <EditText
-                    android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:hint="Email"
-                    app:cardCornerRadius="10dp"
-                    android:inputType="textEmailAddress"
-                    android:padding="12dp" />
-
-                <EditText
-                    android:id="@+id/input_subject"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:hint="Subject"
-                    app:cardCornerRadius="10dp"
-                    android:inputType="text"
-                    android:padding="12dp" />
-
-                <EditText
-                    android:id="@+id/input_message"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@android:drawable/edit_text"
-                    android:gravity="top|start"
-                    android:hint="Type your Message"
-                    app:cardCornerRadius="10dp"
-                    android:inputType="textMultiLine"
-                    android:padding="12dp" />
-
-                <Button
-                    android:id="@+id/send_message_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="32dp"
-                    android:backgroundTint="@color/red"
-                    android:paddingHorizontal="24dp"
-                    android:paddingVertical="12dp"
-                    app:cardCornerRadius="10dp"
-                    android:text="Send message"
-                    android:textColor="#FFFFFF" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -316,23 +338,23 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <!-- FAQ Card -->
                         <androidx.cardview.widget.CardView
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="16dp"
-                            app:cardElevation="6dp"
+                            android:padding="16dp"
                             app:cardCornerRadius="12dp"
-                            android:padding="16dp">
+                            app:cardElevation="6dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:gravity="center_horizontal">
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="100dp"
@@ -344,29 +366,30 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="8dp"
+                                    android:gravity="center"
                                     android:text="FAQs"
                                     android:textColor="#D32F2F"
                                     android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    android:gravity="center"/>
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:gravity="center"
                                     android:text="Find quick answers to the most common questions about Lungisa and how it works."
                                     android:textColor="#333333"
-                                    android:textSize="14sp"
-                                    android:gravity="center"
-                                    android:layout_marginBottom="12dp"/>
+                                    android:textSize="14sp" />
 
                                 <Button
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Go to FAQs"
                                     android:backgroundTint="@color/black"
-                                    android:textColor="#FFFFFF"
                                     android:paddingLeft="16dp"
-                                    android:paddingRight="16dp"/>
+                                    android:paddingRight="16dp"
+                                    android:text="Go to FAQs"
+                                    android:textColor="@color/white"
+                                    app:cornerRadius="10dp" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -375,15 +398,15 @@
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="16dp"
-                            app:cardElevation="6dp"
+                            android:padding="16dp"
                             app:cardCornerRadius="12dp"
-                            android:padding="16dp">
+                            app:cardElevation="6dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:gravity="center_horizontal">
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="100dp"
@@ -395,29 +418,30 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="8dp"
+                                    android:gravity="center"
                                     android:text="Requests"
                                     android:textColor="#D32F2F"
                                     android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    android:gravity="center"/>
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:gravity="center"
                                     android:text="Need support or want to report something? Submit a request and we'll get on it."
                                     android:textColor="#333333"
-                                    android:textSize="14sp"
-                                    android:gravity="center"
-                                    android:layout_marginBottom="12dp"/>
+                                    android:textSize="14sp" />
 
                                 <Button
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Go to Requests"
                                     android:backgroundTint="@color/black"
-                                    android:textColor="#FFFFFF"
                                     android:paddingLeft="16dp"
-                                    android:paddingRight="16dp"/>
+                                    android:paddingRight="16dp"
+                                    android:text="Go to Requests"
+                                    android:textColor="@color/white"
+                                    app:cornerRadius="10dp" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -425,15 +449,15 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
-                            app:cardElevation="6dp"
+                            android:padding="16dp"
                             app:cardCornerRadius="12dp"
-                            android:padding="16dp">
+                            app:cardElevation="6dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:gravity="center_horizontal">
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="100dp"
@@ -445,218 +469,34 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="8dp"
+                                    android:gravity="center"
                                     android:text="Ask the Community"
                                     android:textColor="#D32F2F"
                                     android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    android:gravity="center"/>
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:gravity="center"
                                     android:text="Start a discussion, share insights, or get advice from others who care—your voice matters."
                                     android:textColor="#333333"
-                                    android:textSize="14sp"
-                                    android:gravity="center"
-                                    android:layout_marginBottom="12dp"/>
+                                    android:textSize="14sp" />
 
                                 <Button
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Go to Community"
                                     android:backgroundTint="@color/black"
-                                    android:textColor="#FFFFFF"
                                     android:paddingLeft="16dp"
-                                    android:paddingRight="16dp"/>
+                                    android:paddingRight="16dp"
+                                    android:text="Go to Community"
+                                    android:textColor="@color/white"
+                                    app:cornerRadius="10dp" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
-
                     </LinearLayout>
                 </HorizontalScrollView>
-
-
-                <!-- Bottom Logo -->
-                <TextView
-                    android:id="@+id/logo_bottom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="24dp"
-                    android:text="Lungisa Logo"
-                    android:textColor="#D32F2F"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <!-- Footer navigation -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="7">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="LUNGIS"
-                        android:textColor="#D32F2F"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Home"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="About us"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Services"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Team"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Projects"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Contact"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <!-- Social media -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Facebook"
-                        android:textColor="#3b5998"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Instagram"
-                        android:textColor="#E1306C"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="Twitter"
-                        android:textColor="#1DA1F2"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="4dp"
-                        android:text="LinkedIn"
-                        android:textColor="#0077B5"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <!-- Subscription -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_horizontal"
-                    android:text="Subscribe to get latest updates"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/subscription_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@android:drawable/edit_text"
-                    android:hint="your email"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp" />
-
-                <Button
-                    android:id="@+id/subscribe_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="#D32F2F"
-                    android:paddingHorizontal="24dp"
-                    android:paddingVertical="12dp"
-                    android:text="Subscribe"
-                    android:textColor="#FFFFFF" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:text="© 2025 Lungis. All rights reserved."
-                    android:textColor="#888888"
-                    android:textSize="12sp" />
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

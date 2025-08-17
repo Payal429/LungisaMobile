@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+    id("kotlin-kapt")
 }
 
 android {
@@ -34,6 +35,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    // Add this block to resolve duplicate META-INF files
+    packagingOptions {
+        resources {
+            // Use addAll instead of += to avoid ambiguity
+            excludes.addAll(listOf("META-INF/NOTICE.md", "META-INF/LICENSE.md"))
+        }
+    }
 }
 
 dependencies {
@@ -47,5 +55,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    kapt("com.github.bumptech.glide:compiler:4.16.0")
+    implementation ("com.sun.mail:android-mail:1.6.7")
+    implementation ("com.sun.mail:android-activation:1.6.7")
 
 }

@@ -2,6 +2,7 @@ package com.example.lungisa
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -14,13 +15,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navView: NavigationView
     private lateinit var topAppBar: MaterialToolbar
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Initialize views
         drawerLayout = findViewById(R.id.drawer_layout)
         navView = findViewById(R.id.nav_view)
         topAppBar = findViewById(R.id.topAppBar)
+
+        // Change the colour of the title text
+        topAppBar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+
+        // Change the colour of the status bar
+        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
 
         // Hamburger click opens drawer
         topAppBar.setNavigationOnClickListener {
